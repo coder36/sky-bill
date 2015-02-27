@@ -24,6 +24,7 @@ My Solution
 * TDD'ed using Rspec and Capybara
 * To save time, I used Sky's own stylesheets - this means that the app is totally 'responsive'. If I had more time, I would have tried to figure out how Sky's css's work and convert them to sass dynamic stylesheets, served up by sinatra-assetpack.
 * jquery/javascript to toggle the expandable sections.
+* Google Anayltics to track bill section toggling.
 
 
 Install

@@ -40,6 +40,10 @@ class BillApp < Sinatra::Base
     end
   end
 
+  get '/' do
+    redirect '/bill'
+  end
+
   get '/bill' do
     json_end_point = params[:json_end_point]
     json_end_point ||= "http://safe-plains-5453.herokuapp.com/bill.json"
