@@ -1,0 +1,57 @@
+    <div class="responsive">
+      <div class="skycom-container">
+        <div class="skycom-12 relative">
+        <h1>Your Sky Bill</h1>
+      </div>
+        <div class="skycom-container">
+          <div class="skycom-8">
+
+
+            <section class="bill">
+            <h2><%="#{nice_date json.statement.period.from} - #{nice_date json.statement.period.to}"%></h2>
+
+            <%=bill_section(:id => "subscriptions", :title => "My Subscriptions", 
+                   :total => json.package.total,
+                   :entries => json.package.subscriptions.map { |e| { :type => e["type"], :name => e["name"] , :cost => e["cost"] } }
+               )%>
+
+             <%=bill_section(:id => "sky_store", :title => "Sky Store", 
+                   :total => json.skyStore.total,
+                   :entries => (json.skyStore.rentals.map { |e| { :type => "Rental", :name => e["title"] , :cost => e["cost"] } } +
+                            json.skyStore.buyAndKeep.map { |e| {:type => "Buy And Keep", :name => e["title"] , :cost => e["cost"] } } )
+              )%>
+
+            <%=bill_section(:id => "call_charges", :title => "Call Charges", 
+                   :total => json.callCharges.total,
+                   :entries => json.callCharges.calls.map { |e| { :type => e["duration"], :name => e["called"] , :cost => e["cost"] } }
+               )%>
+
+             <section id="total">
+                <header>
+                <span class="title">Total due <%=nice_date json.statement.due%></span>
+                  <span class="amount">£<%=nice_amount json.total%></span>
+                </header>
+            </section>
+
+          </div>
+
+        </div>
+
+        <div id="navigation" class="skycom-4">
+          <section class="container">
+          <h2>Bills & payments</h2>
+          <p>
+          View your bill, make a payment and keep an eye on what you're spending with the option to see the
+          charges on your next bill. You can also change your payment method and your payment due date.
+          </p>
+
+          <img src="/images/bills-payments.jpg" style="max-width: 100%;"/>
+          </section>
+
+        </div>
+
+
+      </div>
+
+
+    </div>

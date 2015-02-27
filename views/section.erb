@@ -1,0 +1,46 @@
+<section id="<%=id%>_section">
+  <header>
+    <a id="<%=id%>" class="expandable" href="#">
+      <span class="title"><%=title%>
+        <span class="subtitle"><%=subtitle%></span>
+      </span>
+      <span class="amount">£<%=nice_amount total%></span>
+      <span class="chevron">
+        <i class="skycon-chevron-down"></i>
+        <i class="skycon-chevron-up"></i>
+      </span>
+    </a>
+
+  </header>
+
+  <div class="detail">
+    <% if !subtitle.empty? %>
+    <div class="section_period">
+      <p class="section_period_dates"><%=subtitle%></p>
+    </div>
+    <% end %>
+    <div class="transactions">
+
+    <% entries.each do |e| %>
+
+      <div class="transaction-and-offer-container">
+        <div class="transaction-wrapper">
+          <div class="transaction with-offers">
+            <span class="description"><%=e[:name]%> (<%=e[:type]%>)</span>
+            <span class="total">£<%=nice_amount e[:cost]%></span>
+          </div>
+        </div>
+      </div>
+
+    <% end %>
+
+
+      <div class="section_total">
+        <span class="label">Total</span>
+        <span id="<%=id%>_total" class="amount">£<%=nice_amount total%></span>
+      </div>
+    </div>
+  </div>
+
+
+</section>

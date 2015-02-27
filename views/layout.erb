@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://web-toolkit.global.sky.com/2.3.6/stylesheets/toolkit.css">
+    <link rel="stylesheet" href="https://web-toolkit.global.sky.com/components/skycons/0.2.0/css/skycons.css">
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <%= css :application, :media => 'screen' %>
+    <%= js :application %>
+  </head>
+
+  <body>
+
+    <div class="skycom header estate-header">
+    <div class="header__content">
+      <div class="headline">
+        <a class="headline__link headline__link--estate" href="/" name="Logo" tabindex="-1"> My Sky homepage </a>
+      </div>
+    </div>
+  </div>
+
+    <%= yield %>
+
+    <div class="skycom footer">
+      <div class="footer__corporate">
+        <div class="footer__copyright">
+          <a class="footer__sky-logo" href="//www.sky.com" title="Sky.com" tabindex="-1"><i>Sky</i></a>
+          <span class="footer__body copyright">© 2015 BSkyB</span>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
