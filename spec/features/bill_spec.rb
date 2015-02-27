@@ -77,7 +77,7 @@ describe 'Your Sky Bill web portal' do
 
     it "shows, your total bill amountm when it is due by" do
       expect(page).to have_content( "Total due 25 Jan" )
-      expect(page).to have_content( "£136.03" )
+      expect( page.find_by_id("total_total").text).to eq ( "£136.03" )
     end
 
   end

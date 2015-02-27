@@ -22,6 +22,7 @@ My Solution
 * Deployable to Heroku
 * Json parsed and traversed using the excellent [Hashie::Mash](https://github.com/intridea/hashie#mash)
 * TDD'ed using Rspec and Capybara
+* Cucumber/gherkin acceptance tests
 * To save time, I used Sky's own stylesheets - this means that the app is totally 'responsive'. If I had more time, I would have tried to figure out how Sky's css's work and convert them to sass dynamic stylesheets, served up by sinatra-assetpack.
 * jquery/javascript to toggle the expandable sections.
 * Google Anayltics to track bill section toggling.
@@ -34,6 +35,7 @@ Install
     cd sky-bill
     bundle install
     rspec
+    cucumber
     rackup config.ru -o 0.0.0.0        (binds to all adapters)
 
 Navigate to [http://localhost:9292/bill](http://localhost:9292/bill)

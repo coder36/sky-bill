@@ -12,6 +12,7 @@ group :development do
   gem 'pry'
   gem 'rspec'
   gem 'capybara'
+  gem 'cucumber'
 end
 
 group :production do
