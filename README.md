@@ -55,10 +55,23 @@ I've also copied the end point into the application itself.  It's available at:
 
 * I've only tested it on Chrome.
 
+
+Testing with Chrome
+-------------------
+
+To test in a chrome browser on windows:
+ 
+* Install [chrome driver](https://sites.google.com/a/chromium.org/chromedriver/downloads) to C:/Windows.  
+
+        set IN_BROWSER=true   
+        cucumber
+        rspec
+    
+
 Notes
 -----
 
-Out of the box, the sinatra gem (v1.4.5) doesn't play nicely with the latest version of rack.  The solution is to use sinatra directly from git.
+* Whilst testing with the selenium chrome driver, I discovered that the chrome driver does not support `page.status_code`
 
 
 

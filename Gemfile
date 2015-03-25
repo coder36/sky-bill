@@ -1,8 +1,7 @@
-source 'https://rubygems.org'
-ruby '2.1.3'
+source 'http://rubygems.org'
+ruby '1.9.3'
 
-
-gem 'sinatra', :git => "https://github.com/sinatra/sinatra.git"
+gem 'sinatra'
 gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
 gem 'hashie'
 gem 'rack'
@@ -13,6 +12,7 @@ group :development do
   gem 'rspec'
   gem 'capybara'
   gem 'cucumber'
+  gem 'selenium-webdriver'
 end
 
 group :production do
